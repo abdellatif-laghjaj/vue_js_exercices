@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <form action="">
+            <input :type="input_type" placeholder="password">
+            <button @click="togglePasswordInput">show/hide</button>
+        </form>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data:{
+                input_type: "password",
+            },
+            methods: {
+                togglePasswordInput(){
+                    this.input_type = this.input_type === "password" ? "text" : "password";
+                }
+            }
+        })
+    </script>
+</body>
+</html>
