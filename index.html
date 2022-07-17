@@ -9,7 +9,7 @@
     <div id="app">
         <form action="">
             <input :type="input_type" placeholder="password">
-            <button @click="togglePasswordInput">show/hide</button>
+            <button @click.prevent="togglePasswordInput">show/hide</button>
         </form>
     </div>
 
