@@ -8,24 +8,30 @@
 <body>
     <div id="app">
         <form action="">
-            <input :type="input_type" placeholder="password">
-            <button @click.prevent="togglePasswordInput">{{ text }}</button>
+            <input type="text" placeholder="Post title" v-model="input">
+            <button @click.prevent="convert">Convert</button>
         </form>
+        <div class="salg">
+            https://www.abdel.com/<span>{{output}}</span>
+        </div>
     </div>
 
     <script>
         new Vue({
             el: "#app",
-            data:{
-                input_type: "password",
-                text: "show",
+            data: {
+                input: "",
+                output: ""
             },
             methods: {
-                togglePasswordInput(){
-                    this.input_type = this.input_type === "password" ? "text" : "password";
-                    this.text = this.text === "show" ? "hide" : "show";
-                }
-            }
+                convert(){
+                    //cash the variable
+                    var slug = this.input;
+                    slug = slug.toLowerCase().replace(" ", "-");
+                    this.output = slug;
+                    this.input = '';
+                },
+            },
         })
     </script>
 </body>
